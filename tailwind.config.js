@@ -11,9 +11,11 @@ module.exports = {
   plugins: [require('flowbite/plugin')],
   theme: {
     fontFamily: {
-      primary: 'Inter'
+      primary: 'Outfit'
     },
     colors: {
+      primario: 'var(--primario)',
+      negro: 'var(--negro)',
       primary: {
         // Customize it on globals.css :root
         50: 'rgb(var(--tw-color-primary-50) / <alpha-value>)',
@@ -27,7 +29,7 @@ module.exports = {
         800: 'rgb(var(--tw-color-primary-800) / <alpha-value>)',
         900: 'rgb(var(--tw-color-primary-900) / <alpha-value>)'
       },
-      dark: '#222222'
+      dark: '#262626'
     }
   }
 };

@@ -1,0 +1,19 @@
+.header{
+    background-image: linear-gradient(to right, rgb(0 0 0 / .8), rgb(0 0 0 / .7)), url('../../../public/images/header.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.navegation a{
+  text-decoration: none;
+  font-size: .85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 5px;
+  transition-property: background-color;
+  transition-duration: .3s;
+}
+
+.navegation a:hover{
+  background-color: var(--primario);
+}

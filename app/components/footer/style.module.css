@@ -1,0 +1,13 @@
+.navegation a{
+  text-decoration: none;
+  font-size: .85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 5px;
+  transition-property: color;
+  transition-duration: .3s;
+}
+
+.navegation a:hover{
+  color: var(--primario);
+}
