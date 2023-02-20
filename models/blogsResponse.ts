@@ -3,7 +3,7 @@ export interface BlogsResponse {
     data: Blog[];
 }
 
-interface Blog {
+export interface Blog {
     id: number;
     attributes: BlogAttributes;
 }

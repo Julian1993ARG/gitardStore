@@ -1,10 +1,22 @@
 import { getBlogs } from '../utils';
+import { CardBlog } from '../components';
 
 export default async function BlogPage () {
-  const blogs = await getBlogs();
-  console.log(blogs.data[0]?.attributes.image.data.attributes.url);
+  const { data } = await getBlogs();
 
   return (
-    <h1>Blogs</h1>
+    <main className='layout'>
+      <h1 className='heading'>Blog</h1>
+      <div className='grid gap-10 md:grid-cols-2 lg:grid-cols-3'>
+
+        {
+        data.map((blog) => (
+          <CardBlog key={blog.id} blog={blog} />
+
+        ))
+      }
+      </div>
+
+    </main>
   );
 }
