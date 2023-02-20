@@ -1,6 +1,6 @@
 /* eslint-disable no-use-before-define */
 export interface BlogsResponse {
-    data: Blog[];
+    data: Blog[] ;
 }
 
 export interface Blog {

@@ -1,1 +1,2 @@
-export { default as getBlogs } from './getBlogs';
+export { default as formatDate } from './formatDate';
+export * from './getBlogs';

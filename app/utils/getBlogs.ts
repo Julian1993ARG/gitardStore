@@ -1,9 +1,15 @@
-import { BlogsResponse } from '@/models/blogsResponse';
+import { BlogsResponse, Blog } from '@/models/blogsResponse';
 import { strapiApi } from '@/services';
 
-const getBlogs = async (): Promise<BlogsResponse> => {
+export const getBlogs = async (): Promise<BlogsResponse> => {
   const { data } = await strapiApi.get('blogs?populate=*');
   return data;
 };
 
-export default getBlogs;
+export const getBlogById = async (id:string): Promise<Blog> => {
+  if (!id) throw new Error('id is required');
+  if (typeof id !== 'string') throw new Error('id must be a string');
+
+  const { data } = await strapiApi.get(`blogs/${id}?populate=*`);
+  return data.data;
+};
