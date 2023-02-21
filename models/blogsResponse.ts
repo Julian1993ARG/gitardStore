@@ -16,6 +16,7 @@ interface BlogAttributes {
     details: string;
     description: string;
     image: Image;
+    url: string;
 }
 
 interface Image {

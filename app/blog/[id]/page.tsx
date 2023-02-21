@@ -1,4 +1,5 @@
-import { getBlogById } from '@/app/utils';
+import { getBlogById, formatDate } from '@/app/utils';
+import Image from 'next/image';
 
 interface Props {
   params: {
@@ -8,9 +9,27 @@ interface Props {
 export default async function page ({ params }:Props) {
   const idBlog = params.id;
   const { attributes } = await getBlogById(idBlog);
-  const { description, details, image, title } = attributes;
-  console.log(description, details, image, title);
+  const { description, image, title, createdAt } = attributes;
+  const urlImage = image.data.attributes.url;
   return (
-    <div>page</div>
+    <main className='max-w-3xl mx-auto'>
+      <h1 className='heading'>{title}</h1>
+      <article>
+        <div className='relative w-auto h-96   '>
+          <Image
+            className='object-contain'
+            src={urlImage}
+            alt={title}
+            fill
+          />
+        </div>
+        <div>
+          <p className='text-xs text-primario my-4'>{formatDate(createdAt)}</p>
+          <div style={{ whiteSpace: 'pre-wrap' }} dangerouslySetInnerHTML={{ __html: description }} />
+        </div>
+
+      </article>
+
+    </main>
   );
 }
