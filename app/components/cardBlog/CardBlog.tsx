@@ -9,16 +9,15 @@ interface Props {
 }
 
 export default function CardBlog ({ blog }: Props) {
-  const { id } = blog;
-  const { publishedAt, title, details } = blog.attributes;
-  const { url } = blog.attributes.image.data.attributes;
+  const { publishedAt, title, details, url } = blog.attributes;
+  const { url: ImageUrl } = blog.attributes.image.data.attributes;
   return (
     <article>
       <div className='relative h-96 w-full'>
 
         <Image
           className='object-cover object-center'
-          src={url}
+          src={ImageUrl}
           alt={title}
           fill
           sizes='(max-width: 768px) 100vw,
@@ -34,7 +33,7 @@ export default function CardBlog ({ blog }: Props) {
         </h3>
         <p className='text-xs text-primario my-4'>{formatDate(publishedAt)}</p>
         <p className={style.details}>{details}</p>
-        <Link className='py-2 mt-5 block text-center uppercase text-sm font-bold text-black border-2 border-primario hover:text-white hover:bg-primario transition-colors ' href={`/blog/${id}`}>Leer Blog</Link>
+        <Link className='py-2 mt-5 block text-center uppercase text-sm font-bold text-black border-2 border-primario hover:text-white hover:bg-primario transition-colors ' href={`/blog/${url}`}>Leer Blog</Link>
       </div>
     </article>
   );

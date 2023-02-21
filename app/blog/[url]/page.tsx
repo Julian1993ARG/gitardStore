@@ -1,14 +1,15 @@
-import { getBlogById, formatDate } from '@/app/utils';
+import { getBlogByURL, formatDate } from '@/app/utils';
 import Image from 'next/image';
 
 interface Props {
   params: {
-    id: string
+    url: string
   }
 }
 export default async function page ({ params }:Props) {
-  const idBlog = params.id;
-  const { attributes } = await getBlogById(idBlog);
+  const urlBlog = params.url;
+  const { attributes } = await getBlogByURL(urlBlog);
+
   const { description, image, title, createdAt } = attributes;
   const urlImage = image.data.attributes.url;
   return (
@@ -21,6 +22,9 @@ export default async function page ({ params }:Props) {
             src={urlImage}
             alt={title}
             fill
+            sizes='(max-width: 768px) 100vw,
+              (max-width: 1200px) 50vw,
+              33vw'
           />
         </div>
         <div>

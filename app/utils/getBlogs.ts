@@ -13,3 +13,11 @@ export const getBlogById = async (id:string): Promise<Blog> => {
   const { data } = await strapiApi.get(`blogs/${id}?populate=*`);
   return data.data;
 };
+
+export const getBlogByURL = async (url:string): Promise<Blog> => {
+  if (!url) throw new Error('url is required');
+  if (typeof url !== 'string') throw new Error('url must be a string');
+
+  const { data } = await strapiApi.get(`blogs?populate=*&filters[url][$eq]=${url}`);
+  return data.data[0];
+};
