@@ -3,7 +3,7 @@ import nosotrosImage from '../../public/images/nosotros.jpg';
 
 export default function Nosotros () {
   return (
-    <main className='layout'>
+    <section className='my-6 layout '>
 
       <div className='grid md:grid-cols-2 items-center gap-8'>
         <div className='relative w-full h-[400px] '>
@@ -22,6 +22,6 @@ export default function Nosotros () {
           </p>
         </div>
       </div>
-    </main>
+    </section>
   );
 }

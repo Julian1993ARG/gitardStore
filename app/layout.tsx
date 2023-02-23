@@ -7,7 +7,7 @@ const RootLayout: FC<PropsWithChildren> = function ({ children }) {
     <html lang='en'>
       <body>
         <Header />
-        <main className='layout'>
+        <main>
           {children}
         </main>
         <Footer />

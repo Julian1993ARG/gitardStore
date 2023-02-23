@@ -1,6 +1,5 @@
 import { getGuitarsByURL } from '@/app/utils';
 import Image from 'next/image';
-import style from './style.module.css';
 
 type Params = {
   params: {

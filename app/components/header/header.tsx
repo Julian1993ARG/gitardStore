@@ -1,9 +1,9 @@
+
 import Link from 'next/link';
-import { FC } from 'react';
 import style from './style.module.css';
 import Image from 'next/image';
 
-const Header: FC<Record<string, never>> = function () {
+const Header = function () {
   return (
     <header className={`${style.header} text-white py-12 `}>
       <div className='layout'>

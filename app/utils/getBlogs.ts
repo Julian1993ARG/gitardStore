@@ -21,3 +21,11 @@ export const getBlogByURL = async (url:string): Promise<Blog> => {
   const { data } = await strapiApi.get(`blogs?populate=*&filters[url][$eq]=${url}`);
   return data.data[0];
 };
+
+export const getLimitBlogs = async (limit:number): Promise<Blog[]> => {
+  if (!limit) throw new Error('limit is required');
+  if (typeof limit !== 'number') throw new Error('limit must be a number');
+
+  const { data } = await strapiApi.get(`blogs?populate=*&sort[0]=createdAt%3Adesc&pagination[limit]=${limit}`);
+  return data.data;
+};

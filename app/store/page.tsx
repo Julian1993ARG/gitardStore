@@ -4,9 +4,9 @@ import { CardGuitar } from '../components';
 export default async function StorePage () {
   const guitars = await getAllGuitars();
   return (
-    <main>
+    <section className='layout'>
       <h1 className='heading'>Nuestra Colección</h1>
-      <section className='grid gap-9 md:grid-cols-2 lg:grid-cols-3 items-center'>
+      <div className='grid gap-9 md:grid-cols-2 lg:grid-cols-3 items-center'>
 
         {
         guitars.map((guitar) => (
@@ -17,7 +17,7 @@ export default async function StorePage () {
           />
         ))
       }
-      </section>
-    </main>
+      </div>
+    </section>
   );
 }

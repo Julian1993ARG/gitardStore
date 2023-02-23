@@ -5,7 +5,7 @@ export default async function BlogPage () {
   const { data } = await getBlogs();
 
   return (
-    <main className='layout'>
+    <section className='layout'>
       <h1 className='heading'>Blog</h1>
       <div className='grid gap-10 md:grid-cols-2 lg:grid-cols-3'>
 
@@ -16,7 +16,6 @@ export default async function BlogPage () {
         ))
       }
       </div>
-
-    </main>
+    </section>
   );
 }

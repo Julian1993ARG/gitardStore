@@ -13,7 +13,7 @@ export default async function page ({ params }:Props) {
   const { description, image, title, createdAt } = attributes;
   const urlImage = image.data.attributes.url;
   return (
-    <main className='max-w-3xl mx-auto'>
+    <section className='max-w-3xl mx-auto'>
       <h1 className='heading'>{title}</h1>
       <article>
         <div className='relative w-auto h-96   '>
@@ -34,6 +34,6 @@ export default async function page ({ params }:Props) {
 
       </article>
 
-    </main>
+    </section>
   );
 }
