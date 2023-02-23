@@ -89,6 +89,9 @@
     color: var(--primario);
     margin: 3.125rem 0;
   }
+  [class*="defaultBottom"]{
+    @apply py-2 mt-5 block text-center uppercase text-sm font-bold text-black border-2 border-primario hover:text-white hover:bg-primario transition-colors;
+  }
 }
 
 @layer utilities {

@@ -33,7 +33,7 @@ export default function CardBlog ({ blog }: Props) {
         </h3>
         <p className='text-xs text-primario my-4'>{formatDate(publishedAt)}</p>
         <p className={style.details}>{details}</p>
-        <Link className='py-2 mt-5 block text-center uppercase text-sm font-bold text-black border-2 border-primario hover:text-white hover:bg-primario transition-colors ' href={`/blog/${url}`}>Leer Blog</Link>
+        <Link className='defaultBottom' href={`/blog/${url}`}>Leer Blog</Link>
       </div>
     </article>
   );
